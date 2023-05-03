@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","favicon":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","avatar":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","font_size":"18px","font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://s2.ax1x.com/2020/01/23/1VQk7t.jpg","description":"刘皓铭 || 一名华中科技大学的计科学生","font_color":"white","hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066cc","logo":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","favicon":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","avatar":"https://z3.ax1x.com/2020/12/03/DTjATs.jpg","font_size":"18px","font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://s2.ax1x.com/2020/01/23/1VQk7t.jpg","description":"刘皓铭 || 一名华中科技大学的计科学生","font_color":"white","hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -317,6 +317,10 @@ mjx-container[display="true"] + br {
     
     
     
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
 </div>
 
                         </div>
@@ -449,6 +453,15 @@ target <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg s
         </div>
 
         
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%B7%E5%80%BC%E5%AD%A6%E4%B9%A0"><span class="nav-text">价值学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E5%AD%A6%E4%B9%A0"><span class="nav-text">策略学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#actor-critic-methods"><span class="nav-text">Actor-Critic Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B"><span class="nav-text">蒙特卡洛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sarsa-%E7%AE%97%E6%B3%95"><span class="nav-text">Sarsa 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-learning-%E7%AE%97%E6%B3%95"><span class="nav-text">Q-Learning 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multi-step-td-target"><span class="nav-text">Multi-Step TD Target</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
     </div>
 </div>
 
@@ -474,6 +487,17 @@ target <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg s
             
         </div>
         
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
         <div class="theme-info info-item">
             由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
@@ -490,6 +514,10 @@ target <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg s
             <div class="post-tools-container">
     <ul class="tools-list">
         <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
         
 
         <!-- go comment -->
@@ -576,6 +604,14 @@ target <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg s
 <script src="/js/post-helper.js"></script>
 
         
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
         
     
 </div>
